@@ -19,12 +19,9 @@ const __dirname = path.dirname(__filename);
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
-app.use(cors(
-    {
-        origin: process.env.FRONTEND_URL,
-        credentials: true,
-    }
-));
+app.use(cors({ origin: '*' }));
+
+
 app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
 
