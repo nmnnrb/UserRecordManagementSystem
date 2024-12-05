@@ -44,7 +44,9 @@ const port = process.env.PORT || 8000;
 //route
 app.use('/api' , authRouter)
 app.use('/user' , userRouter);
-
+app.get('/health', (req, res) => {
+    res.status(200).json({ message: 'Server is running!' });
+});
 
 
 app.listen(port , () => {{
